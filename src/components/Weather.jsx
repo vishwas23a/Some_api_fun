@@ -18,6 +18,8 @@ function Weather() {
     humidity: "Na",
     airQuality: "Na",
   });
+  console.log(window.location.href)
+
   async function getData(data) {
     const promise = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=e5f69afc5ec94bf894962800242002&q=${data}&aqi=yes`

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Quote.css'
 function Quote() {
+  console.log(window.location.href)
+
   const [quotes,setQuotes]=useState({message:'Maar denge Katta Kapar me, Aaiye na UP Bihar me',author:'Vishwas'})
 
 async function randomQuote() {

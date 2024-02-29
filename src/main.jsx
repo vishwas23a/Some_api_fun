@@ -11,43 +11,33 @@ import Gender from './components/Gender.jsx'
 
 
 
-const router = createBrowserRouter([
+const router =createBrowserRouter([
 
 {
   path:'/',
   element:<App/>,
-
 
   children:[
 
   {
     path:"Weather",
     element:<Weather/>,
-    index:true,
   },
   {
     path:"Quote",
     element: <Quote/>,
-    index:true,
-
   },
   {
     path:"Meme",
     element:<Meme/>,
-    index:true,
-
   },
   {
     path:"Random",
     element:<Random/>,
-    index:true,
-
   },
   {
     path:"Gender",
     element:<Gender/>,
-    index:true,
-
   }
 
 ]
