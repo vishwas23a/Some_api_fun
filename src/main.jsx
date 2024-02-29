@@ -16,6 +16,8 @@ const router = createBrowserRouter([
 {
   path:'/',
   element:<App/>,
+  index:true,
+
 
   children:[
 
@@ -27,18 +29,26 @@ const router = createBrowserRouter([
   {
     path:"Quote",
     element: <Quote/>,
+    index:true,
+
   },
   {
     path:"Meme",
-    element:<Meme/>
+    element:<Meme/>,
+    index:true,
+
   },
   {
     path:"Random",
     element:<Random/>,
+    index:true,
+
   },
   {
     path:"Gender",
     element:<Gender/>,
+    index:true,
+
   }
 
 ]
