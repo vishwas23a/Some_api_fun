@@ -1,0 +1,78 @@
+*{
+    margin: 0px;
+}
+.marvelback{
+    background-color: rgb(184, 37, 37);
+    height: 79vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marvelbox{
+    background-color: rgb(36, 35, 35);
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60vh;
+    width: 30vw;    
+    color: white;
+
+
+}
+.marvelsearch{
+    display: flex;
+    gap: 10px;
+}
+.marvelsearch input{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;
+    border: 1px ;
+}
+.marvelsearch  button{
+    width: 6vw;
+    border-radius: 5px;
+    border: 1px;
+    cursor: pointer;
+}
+.marvelsearch button:hover{
+    color: rgb(184, 37, 37) ;
+    box-shadow:2px 0px 8px 3px rgb(184, 37, 37) ;
+}
+
+
+.meaninghead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+.marvelbox{
+    width: 50vw;
+}
+.marvelsearch input{
+    width: 30vw;
+}
+.marvelsearch button{
+    width: 10vw;
+}
+}
+
+@media screen and (max-width: 600px) {
+   .marvelbox{
+    width: 60vw;
+   }
+   .marvelsearch input{
+    width: 35vw;
+   }
+   .marvelsearch button{
+    width: 13vw;
+}
+}
