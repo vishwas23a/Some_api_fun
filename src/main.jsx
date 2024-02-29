@@ -11,7 +11,7 @@ import Gender from './components/Gender.jsx'
 
 
 
-const router =createBrowserRouter([
+const router = createBrowserRouter([
 
 {
   path:'/',
@@ -22,6 +22,7 @@ const router =createBrowserRouter([
   {
     path:"Weather",
     element:<Weather/>,
+    index:true,
   },
   {
     path:"Quote",
