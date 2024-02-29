@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
-import {Link} from 'react-router-dom'
-import Weather from './Weather'
+import {Link,NavLink} from 'react-router-dom'
+
 function Navbar() {
   return (
     <>
@@ -10,7 +10,7 @@ function Navbar() {
    <h1>Some Fun Project </h1>
     </div>
     <div className='nav'>
-      <Link to="/Weather" className={({isActive})=> isActive? "active" : "inactive"} >
+      <Link to="/Weather">
       <button>Weather</button></Link>
       <Link to="/Quote">
       <button>Quote Generator</button>  </Link> 

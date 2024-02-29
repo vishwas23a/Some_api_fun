@@ -31,11 +31,10 @@
     border: 0px solid royalblue;
     cursor: pointer;
 }
-.active button{
+.active{
     background-color: whitesmoke;
     cursor: pointer;
     color: royalblue;
     box-shadow: 0px 5px 7px 1px royalblue;
-
-
 }
+
