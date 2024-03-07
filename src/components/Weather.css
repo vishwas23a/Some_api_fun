@@ -65,7 +65,7 @@ input::placeholder{
     height: 150px;
 }
 #condition{
-    margin-left: 80px;
+    margin-left: 60px;
 
 }
 #temp{
@@ -74,7 +74,7 @@ input::placeholder{
 }
 #city{
     margin-left: 40px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .icon{
     height: 80px;

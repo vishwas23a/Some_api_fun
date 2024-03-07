@@ -22,39 +22,38 @@ function Weather() {
 
   async function getData(data) {
     const promise = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=e5f69afc5ec94bf894962800242002&q=${data}&aqi=yes`
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${data}?unitGroup=metric&include=current&key=JBZZ8RA3X5L97WTVYS8PQ3RWP&contentType=json
+      `
     );
     const result = await promise.json();
     return result;
   }
-  const cityCondition = document.getElementById("condition");
 
   const handleClick = async () => {
     const input = document.getElementById("data");
 
     const value = input.value;
     const response = await getData(value);
-    console.log(response);
-
+console.log(response.currentConditions.conditions);
     setWeather({
-      locationName: response.location.name,
-      locationCountry: response.location.country,
-      condition: response.current.condition.text,
-      temp:response.current.temp_c ,
-      wind: response.current.wind_kph,
-      localTime: response.location.localtime,
-      humidity: response.current.humidity,
-      airQuality: response.current.air_quality.o3,
+      locationName: response.address,
+      locationCountry: response.resolvedAddress,
+      condition: response.currentConditions.conditions,
+      temp:response.currentConditions.temp,
+      wind: response.currentConditions.windspeed,
+      localTime: response.currentConditions.datetime,
+      humidity: response.currentConditions.humidity,
+      airQuality: response.currentConditions.visibility,
     });
 
-    const conditionCode = response.current.condition.code;
+    const conditionCode = response.currentConditions.conditions;
     switch (conditionCode) {
-      case 1000: // Sunny
+      case "Clear": 
         icon.src = sunny;
         break;
-      case 1063: // Patchy rain possible
-      case 1186: // Moderate or heavy rain shower
-      case 1183:
+      case "Rain,Partially cloudy": // Moderate or heavy rain shower
+      case "Rain":
+
         icon.src = rain;
         break;
       case 1087: // Thundery outbreaks possible
@@ -65,9 +64,9 @@ function Weather() {
       case 1147: // Freezing fog
         icon.src = mist;
         break;
-      case 1003: // Partly cloudy
-      case 1006: // Overcast
-      case 1009: // Cloudy
+      case "Partially cloudy": // Partly cloudy
+      case "Overcast":
+
         icon.src = cloud;
         break;
       default:
@@ -92,7 +91,7 @@ function Weather() {
             <div className="data1">
               <p id="condition"> {weather.condition}</p>
               <p id="temp">{weather.temp}°C</p>
-              <p id="city">{weather.locationName},{weather.locationCountry} </p>
+              <p id="city">{weather.locationCountry} </p>
             </div>
           </div>
           <div className="sec2">
@@ -106,7 +105,7 @@ function Weather() {
               Humidity <span id="humidity">{weather.humidity}%</span>
             </p>
             <p>
-              Air Quality <span id="air">{weather.airQuality}</span>
+              Visibility <span id="air">{weather.airQuality} km</span>
             </p>
           </div>
         </div>
